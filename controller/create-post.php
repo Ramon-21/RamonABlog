@@ -1,8 +1,6 @@
 <?php
     require_once(__DIR__ . "/../model/config.php");
     
-    $connection = new mysqli($host, $username, $password, $database );
-
    $title = filter-input(INPUT_POST, "title", FILTER_SANITIZE_STRING);
    $post = filter-input(INPUT_POST, "post", FILTER_SANITIZE_STRING);
    
@@ -10,10 +8,8 @@
    
    if($query){
       echo"<p>Successfully inserted post: $title</p>" ;
-   }
+   } 
    else{
       echo"<p>$connection->error</p>";
    }
-           
-   $connectionn->close();
-   
+              
